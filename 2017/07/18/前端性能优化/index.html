@@ -180,8 +180,15 @@
 <h3 id="为什么要做前端性能优化（why）"><a href="#为什么要做前端性能优化（why）" class="headerlink" title="为什么要做前端性能优化（why）"></a>为什么要做前端性能优化（why）</h3><p>在构建web站点的过程中，任何一个细节都有可能影响网站的访问速度，如果不了解性能优化知识，很多不利网站访问速度的因素会形成累加，从而严重影响网站的性能，导致网站访问速度变慢，用户体验低下，最终导致用户流失。</p>
 <h3 id="前端性能优化的原则（rule）"><a href="#前端性能优化的原则（rule）" class="headerlink" title="前端性能优化的原则（rule）"></a>前端性能优化的原则（rule）</h3><ul>
 <li>根据实际情况因地制宜</li>
-<li>不出bug！<h2 id="网页内容Content"><a href="#网页内容Content" class="headerlink" title="网页内容Content"></a>网页内容Content</h2><h3 id="减少http请求次数"><a href="#减少http请求次数" class="headerlink" title="减少http请求次数"></a>减少http请求次数</h3>80%的响应时间花在下载网页内容(images, stylesheets, javascripts, scripts, flash等)。减少请求次数是缩短响应时间的关键！可以通过简化页面设计来减少请求次数，但页面内容较多可以采用以下技巧：</li>
+<li>不出bug！</li>
 </ul>
+<h2 id="网页内容"><a href="#网页内容" class="headerlink" title="网页内容"></a>网页内容</h2><blockquote>
+<p>Content</p>
+</blockquote>
+<h3 id="减少http请求次数"><a href="#减少http请求次数" class="headerlink" title="减少http请求次数"></a>减少http请求次数</h3><blockquote>
+<p>Make Fewer HTTP Requests</p>
+</blockquote>
+<p>80%的响应时间花在下载网页内容(images, stylesheets, javascripts, scripts, flash等)。减少请求次数是缩短响应时间的关键！可以通过简化页面设计来减少请求次数，但页面内容较多可以采用以下技巧：</p>
 <ol>
 <li>捆绑文件: 现在有很多现成的库可以帮你将多个脚本文件捆绑成一个文件，将多个样式表文件捆绑成一个文件，以此来减少文件的下载次数。</li>
 <li><a href="https://alistapart.com/article/sprites" target="_blank" rel="external">CSS Sprites</a>（雪碧图）: 就是把多个图片拼成一副图片，然后通过CSS来控制在什么地方具体显示这整张图片的什么位置。</li>
@@ -196,8 +203,10 @@
 <li><p>每个HTTP请求都需要附带额外的数据，比如请求和响应中的头信息，Cookie信息。当请求的资源很小时，附带的额外数据可能比实际的资源还大。</p>
 </li>
 </ol>
-<p>###减少DNS查询次数</p>
-<p>Reduce DNS Lookups : DNS查找是一个较为底层的行为，我们在浏览器中输入某个地址，我们的浏览器要能正确地定位到服务器之前，就必须对这个域名进行解析，很显然它自己是无法解析的，所以它需要通过一定的机制进行查找，这就是为什么我们通常上网之前需要设置DNS服务器的原因。</p>
+<h3 id="减少DNS查询次数"><a href="#减少DNS查询次数" class="headerlink" title="减少DNS查询次数"></a>减少DNS查询次数</h3><blockquote>
+<p>Reduce DNS Lookups</p>
+</blockquote>
+<p>DNS查找是一个较为底层的行为，我们在浏览器中输入某个地址，我们的浏览器要能正确地定位到服务器之前，就必须对这个域名进行解析，很显然它自己是无法解析的，所以它需要通过一定的机制进行查找，这就是为什么我们通常上网之前需要设置DNS服务器的原因。</p>
 <p>查找DNS是需要花费时间的，经验的总结是至少需要20毫秒左右的时间。在此期间，浏览器是无法下载其他任何内容资源的。所以浏览器会想办法对DNS的查找结果进行缓存。而除了浏览器的缓存之外，操作系统（例如Windows)也会对DNS查询的结果做缓存。只不过，<code>由于浏览器使用太过频繁，目前的主流浏览器都使用自己独有的缓存，而不使用操作系统的缓存。</code></p>
 <p>浏览器，它们在缓存DNS的问题上也不尽相同（主要体现在时间上面），这个差异到底有什么考虑呢？</p>
 <ol>
@@ -279,7 +288,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是前端性能优化（what）"><span class="toc-text">什么是前端性能优化（what）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要做前端性能优化（why）"><span class="toc-text">为什么要做前端性能优化（why）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端性能优化的原则（rule）"><span class="toc-text">前端性能优化的原则（rule）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网页内容Content"><span class="toc-text">网页内容Content</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#减少http请求次数"><span class="toc-text">减少http请求次数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#避免页面跳转"><span class="toc-text">避免页面跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存Ajax"><span class="toc-text">缓存Ajax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#延迟加载"><span class="toc-text">延迟加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提前加载"><span class="toc-text">提前加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#减少DOM元素数量"><span class="toc-text">减少DOM元素数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据域名划分内容"><span class="toc-text">根据域名划分内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#减少iframe数量"><span class="toc-text">减少iframe数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#避免404"><span class="toc-text">避免404</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器"><span class="toc-text">服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用CDN"><span class="toc-text">使用CDN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加Expires-或Cache-Control报文头"><span class="toc-text">添加Expires 或Cache-Control报文头</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是前端性能优化（what）"><span class="toc-text">什么是前端性能优化（what）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要做前端性能优化（why）"><span class="toc-text">为什么要做前端性能优化（why）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端性能优化的原则（rule）"><span class="toc-text">前端性能优化的原则（rule）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网页内容"><span class="toc-text">网页内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#减少http请求次数"><span class="toc-text">减少http请求次数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#减少DNS查询次数"><span class="toc-text">减少DNS查询次数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#避免页面跳转"><span class="toc-text">避免页面跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存Ajax"><span class="toc-text">缓存Ajax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#延迟加载"><span class="toc-text">延迟加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提前加载"><span class="toc-text">提前加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#减少DOM元素数量"><span class="toc-text">减少DOM元素数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据域名划分内容"><span class="toc-text">根据域名划分内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#减少iframe数量"><span class="toc-text">减少iframe数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#避免404"><span class="toc-text">避免404</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器"><span class="toc-text">服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用CDN"><span class="toc-text">使用CDN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加Expires-或Cache-Control报文头"><span class="toc-text">添加Expires 或Cache-Control报文头</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
