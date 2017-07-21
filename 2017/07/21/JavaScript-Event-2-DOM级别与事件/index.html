@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Tags｜Heydadaya&#39;s blog
+        JavaScript Event(2):DOM级别与事件｜Heydadaya&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://heydadaya.github.io/Tags/">
+    <link rel="canonical" href="http://heydadaya.github.io/2017/07/21/JavaScript-Event-2-DOM级别与事件/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -123,122 +123,141 @@
 </script>
 
 <!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="http://imgsrc.baidu.com/forum/pic/item/515eb6096b63f62406923ce18744ebf8184ca3c2.jpg">
+
+
 <style>
-    .intro-header .site-heading {
-        margin: 50px;
-    }
     
     header.intro-header {
         background-image: url('http://imgsrc.baidu.com/forum/pic/item/515eb6096b63f62406923ce18744ebf8184ca3c2.jpg')
     }
+
     
 </style>
 
-<!-- Page Header -->
 <header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading text-center">
-                    <h1>Tags</h1>
-                    <span class="subheading"></span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>JavaScript Event(2):DOM级别与事件</h1>
+                    
+                    <span class="meta">
+                         作者 hey
+                        <span>
+                          日期 2017-07-21
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            JavaScript Event(2):DOM级别与事件
+        </span>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 标签云 -->
-            <div id='tag_cloud' class="tags">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <blockquote>
+<p>在项目开发时，我们时常需要考虑用户在使用产品时产生的各种各样的交互事件，比如鼠标点击事件、敲击键盘事件等。这样的事件行为都是前端DOM事件的组成部分，不同的DOM事件会有不同的触发条件和触发效果,针对不同级别的DOM，我们的DOM事件处理方式也是不一样的。</p>
+</blockquote>
+<h2 id="1-DOM级别"><a href="#1-DOM级别" class="headerlink" title="1. DOM级别"></a>1. DOM级别</h2><p>文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的<code>处理可扩展标志语言的标准编程接口</code>。根据W3C DOM规范，DOM是HTML与XML的应用编程接口（<code>API</code>），DOM将整个页面映射为一个由层次节点组成的文件。有1级、2级、3级共3个级别。</p>
+<blockquote>
+<p>在平时阅读的时候可能会读到DOM0级(DOM Level0)的字眼。实际上，DOM0级标准是不存在的，所谓的<code>DOM0级</code>是DOM历史坐标中的一个<code>参照点</code>而已，具体说呢，DOM0级指的是IE4和Netscape 4.0这些浏览器最初支持的DHTML..大概2000年的时候争论过DOM0的问题，最后结论大概是，没有官方形成此标准。</p>
+</blockquote>
+<h3 id="1-1-DOM1级"><a href="#1-1-DOM1级" class="headerlink" title="1.1 DOM1级"></a>1.1 DOM1级</h3><p>DOM1级（DOM Level 1）于1998年10月成为W3C的推荐标准。DOM1级由<code>两个模块</code>组成：DOM<code>核心</code>（DOM Core）和DOM <code>HTML</code>。其中，DOM核心规定的是如何映射基于XML的文档结构，以便简化对文档中任意部分的访问和操作。DOM HTML模块则在DOM核心的基础上加以扩展，添加了针对HTML的对象和方法。<br>总的来说DOM1级的<code>主要目标</code>是<code>映射文档的结构</code>，并提供<code>查询的接口</code>。</p>
+<h3 id="1-2-DOM2级"><a href="#1-2-DOM2级" class="headerlink" title="1.2 DOM2级"></a>1.2 DOM2级</h3><p>DOM2级在原来DOM的基础上又扩充了（DHTML一直都支持的）鼠标和用户界面事件、范围、遍历（迭代DOM文档的方法）等细分模块，而且通过对象接口增加了对CSS（Cascading Style Sheets，层叠样式表）的支持。DOM1级中的DOM核心模块也经过扩展开始支持XML命名空间。</p>
+<p>DOM2级引入了下列新模块，也给出了众多新类型和新接口的定义:</p>
+<ul>
+<li><p>DOM<code>视图</code>（DOM Views）：定义了跟踪不同文档（例如，应用CSS之前和之后的文档）视图的接口；</p>
+</li>
+<li><p>DOM<code>事件</code>（DOM Events）：定义了事件和事件处理的接口；</p>
+</li>
+<li><p>DOM<code>样式</code>（DOM Style）：定义了基于CSS为元素应用样式的接口；</p>
+</li>
+<li><p>DOM<code>遍历和范围</code>（DOM Traversal and Range）：定义了遍历和操作文档树的接口。</p>
+</li>
+</ul>
+<h3 id="1-3-DOM3级"><a href="#1-3-DOM3级" class="headerlink" title="1.3 DOM3级"></a>1.3 DOM3级</h3><p>DOM3级则进一步扩展了DOM，引入了以统一方式加载和保存文档的方法–在DOM<code>加载和保存</code>（DOM Load and Save）模块中定义；新增了验证文档的方法–在DOM<code>验证</code>（DOM Validation）模块中定义。DOM3级也对DOM核心进行了扩展，开始支持XML 1.0规范，涉及XML Infoset、XPath和XML Base。</p>
+
+                <hr>
                 
-                <a href="#JavaScript, Frontier" title="JavaScript, Frontier" rel="1">JavaScript, Frontier</a>
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/07/20/JavaScript-Event-1-事件流/" data-toggle="tooltip" data-placement="top"
+                           title="JavaScript Event(1):事件流">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
                 
-                <a href="#Tools" title="Tools" rel="1">Tools</a>
+
                 
-                <a href="#Frontier" title="Frontier" rel="1">Frontier</a>
-                
-                <a href="#optimizing" title="optimizing" rel="1">optimizing</a>
+
+
+                <!--加入新的评论系统-->
                 
             </div>
 
-            <!-- 标签列表 -->
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="JavaScript, Frontier">
-                    <span class="tag-text">JavaScript, Frontier</span>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/2017/07/20/JavaScript-Event-1-事件流/">
-                        <h2 class="post-title">
-                            JavaScript Event(1):事件流
-                        </h2>
-                        
-                    </a>
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-DOM级别"><span class="toc-text">1. DOM级别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-DOM1级"><span class="toc-text">1.1 DOM1级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-DOM2级"><span class="toc-text">1.2 DOM2级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-DOM3级"><span class="toc-text">1.3 DOM3级</span></a></li></ol></li></ol>
                 </div>
-                <hr>
-                
             </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Tools">
-                    <span class="tag-text">Tools</span>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/2017/07/18/hexo-skills/">
-                        <h2 class="post-title">
-                            hexo skills
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Frontier">
-                    <span class="tag-text">Frontier</span>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/2017/07/18/跨域问题/">
-                        <h2 class="post-title">
-                            跨域问题
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="optimizing">
-                    <span class="tag-text">optimizing</span>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/2017/07/18/前端性能优化/">
-                        <h2 class="post-title">
-                            前端性能优化
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-
         </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
     </div>
-</div>
+</article>
+
+
+
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->
